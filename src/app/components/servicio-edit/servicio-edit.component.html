@@ -8,7 +8,7 @@
                 <form [formGroup]="editServForm" (ngSubmit)="onSubmitEditS()"> 
                     <div class="form-group">
                         <label for="imputName">Número</label>
-                        <input class="form-control" type="text" formControlName="num">
+                        <input class="form-control" type="text" formControlName="num" value="data.firstName">
                         <div class="invalid-feedback" *ngIf="submitted && myForm.num.errors?.required">
                             Nombre es requerido.
                         </div>

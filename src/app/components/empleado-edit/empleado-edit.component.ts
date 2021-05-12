@@ -13,7 +13,7 @@ export class EmpleadoEditComponent implements OnInit {
 
   submitted = false; 
   editEmpForm! : FormGroup; 
-  userData! : Empleado[]; 
+  empData! : Empleado[]; 
 
   constructor(
     public fb : FormBuilder, 

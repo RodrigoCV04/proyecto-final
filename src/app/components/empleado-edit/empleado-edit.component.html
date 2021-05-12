@@ -4,40 +4,40 @@
             <div class="card-header">
                 <h3 class="mb-0">Editar Empleado</h3>
             </div>
-            <div>
+            <div class="card-body">
                 <form [formGroup]="editEmpForm" (ngSubmit)="onSubmitEditE()">
                     <div class="form-group">
                         <label>Nombre</label>
                         <input class="form-control" type="text" formControlName="firstName">
-                        <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.firstName.errors?.required">
                             Nombre es requerido
                         </div>
                     </div><br>
                     <div class="form-group">
                         <label>Apellido</label>
                         <input class="form-control" type="text" formControlName="lastName">
-                        <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.lastName.errors?.required">
                             Apellido es requerido
                         </div>
                     </div><br>
                     <div class="form-group">
-                        <label>Email</label>
+                        <label for="inputEmail3">Email</label>
                         <input class="form-control" type="text" formControlName="email">
-                        <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.required">
                             Email es requerido
                         </div>
                     </div><br>
                     <div class="form-group">
                         <label>Departamiento</label>
                         <input class="form-control" type="text" formControlName="dep">
-                        <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.dep.errors?.required">
                             Departamiento es requerido
                         </div>
                     </div><br>
                     <div class="form-group">
                         <label>RFC</label>
                         <input class="form-control" type="text" formControlName="rfc">
-                        <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.rfc.errors?.required">
                             RFC es requerido
                         </div>
                     </div><br>
