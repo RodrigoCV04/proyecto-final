@@ -201,7 +201,7 @@ export class ApiService {
   }
 
   getEmpleado(id : any) : Observable<any>{
-    let url = `${this.baseUri}/readE${id}`;
+    let url = `${this.baseUri}/readE/${id}`;
     return this.http.get(url, {headers: this.headers}).pipe(
       map((res : any) =>{
         return res || {}
