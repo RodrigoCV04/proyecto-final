@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-md-4 register-employee">
+        <div class="card card-outline-secondary">
+            <div class="card-header">
+                <h3 class="mb-0">Editar Producto</h3>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="editProdForm" (ngSubmit)="onSubmitEditP()">
+
+                    <div class="form-group">
+                        <label for="inputName">Número</label>
+                        <input class="form-control" type="text" formControlName="id" >
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+                         Número es requerido.
+                        </div>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="inputName">Nombre Productos</label>
+                        <input class="form-control" type="text" formControlName="nameProduct" >
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+                         Nombre es requerido.
+                        </div>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="inputName">Descripción</label>
+                        <textarea formControlName="descProduct" cols="80" class="form-control" placeholder="Ingresa una Descripción"></textarea>
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+                         Nombre es requerido.
+                        </div>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="inputName">Precio</label>
+                        <input class="form-control" type="text" formControlName="precioProduct" >
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+                         Nombre es requerido.
+                        </div>
+                    </div><br>
+                    <div class="form-group">
+                        <label >Cantidad</label>
+                        <input type="Number" formControlName="cantProduct" placeholder="Ingresa la Cantidad" class="form-control" min="0.0">
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                            La cantidad es requerida
+                        </div>
+                    </div><br>
+                    <button type="submit" class="btn btn-primary btn-block">Actualizar</button><br>
+                <a href="/producto-list" text-align="center" > Volver </a>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h1 align="center">Agrega un Empleado</h1>
+            <br>
+            <form [formGroup]='empForm' (ngSubmit) = "onSubmit()">
+                <div class="form-group">
+                    <label >Nombre</label>
+                    <input type="text" formControlName="firstName" placeholder="Ingresa el Nombre" class="form-control" min="0.0">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                        El nombre es requerido
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label >Apellido</label>
+                    <input type="text" formControlName="lastName" placeholder="Ingresa el Apellido" class="form-control" min="0.0">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                        El apellido es requerido
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label >Correo</label>
+                    <input type="text" formControlName="email" placeholder="Ingresa un Email" class="form-control" min="0.0">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                        El email es requerido
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label >Departamento</label>
+                    <input type="text" formControlName="dep" placeholder="Ingresa el Departamento" class="form-control" min="0.0">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                        El departamento es requerido
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label >RFC</label>
+                    <input type="text" formControlName="rfc" placeholder="Ingresa el RFC" class="form-control" min="0.0">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                        El RFC es requerido
+                    </div>
+                </div><br>
+                <button type="submit" class="btn btn-primary btn-block">Agregar Producto</button><br>
+                <a href="/servicio-list" text-align="center" > Volver </a> 
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h1 align="center">Agrega un Producto</h1>
+            <br>
+            <form [formGroup]='productForm' (ngSubmit) = "onSubmit()">
+                <div class="form-group">
+                    <label >Número</label>
+                    <input type="Number" formControlName="id" placeholder="Ingresa el Número" class="form-control" min="0.0">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                        El número es requerido
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label >Nombre del Producto</label>
+                    <input type="text" formControlName="nameProduct" placeholder="Ingresa un Nombre" class="form-control">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                        El nombre es requerido
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label >Descripción</label>
+                    <textarea formControlName="descProduct" cols="80" class="form-control" placeholder="Ingresa una Descripción"></textarea>
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                        La descripción es requerido
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label >Precio</label>
+                    <input type="Number" formControlName="precioProduct" placeholder="Ingresa el Precio" class="form-control" min="0.0">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                        El precio es requerido
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label >Cantidad</label>
+                    <input type="Number" formControlName="cantProduct" placeholder="Ingresa la Cantidad" class="form-control" min="0.0">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                        La cantidad es requerida
+                    </div>
+                </div><br>
+                <button type="submit" class="btn btn-primary btn-block">Agregar Producto</button><br>
+                <a href="/producto-list" text-align="center" > Volver </a>  
+            </form>
+        </div>
+    </div>
+</div>
+

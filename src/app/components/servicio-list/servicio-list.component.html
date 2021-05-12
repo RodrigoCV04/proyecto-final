@@ -1,0 +1,41 @@
+<h1 align="center">Lista de Servicios</h1><br>
+<div align="center">
+    <button routerLink='/create-servicio' type="button" class="btn btn-success">Agregar Servicio</button>
+</div><br>
+<div class="container">
+    <!--No data message-->
+    <p *ngIf="Servicio.length <= 0" class="no-data text-center">Aún no se han agregado productos!</p>
+
+    <!--User list-->
+    <table class="table table-bordered" *ngIf="Servicio.length > 0">
+        <thead class="table-success">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Número</th>
+                <th scope="col">Nombre del Servicio</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Unidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col center">Actualizar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let serv of Servicio; let i = index">
+                <td>{{serv._id}}</td>
+                <td>{{serv.num}}</td>
+                <td>{{serv.nameServ}}</td>
+                <td>{{serv.descServ}}</td>
+                <td>{{serv.unidServ}}</td>
+                <td>{{serv.precioServ}}</td>
+                <td class="text-center edit-block">
+                    <span class="edit m-2 " [routerLink]="['/edit-servicio/', serv._id]">
+                        <button type="button" class="btn btn-success btn-sm ">Editar</button>
+                    </span>
+                    <span class="delete" (click)="removeServicio(serv, i)">
+                        <button type="button" class="btn btn-danger btn-sm">Borrar</button>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

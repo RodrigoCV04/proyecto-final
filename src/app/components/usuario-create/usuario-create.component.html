@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h1 align="center">Agrega un Usuario</h1>
+            <br>
+            <form [formGroup]='userForm' (ngSubmit) = "onSubmit()">
+                <div class="form-group">
+                    <label >Nombre</label>
+                    <input type="text" formControlName="name" placeholder="Ingresa un Nombre" class="form-control" min="0.0">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                        El nombre es requerido
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label >Email</label>
+                    <input type="text" formControlName="email" placeholder="Ingresa un email" class="form-control">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                        El email es requerido
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label >Tipo</label>
+                    <select class="custom-select form-control" (change)='updatedType($any($event.target).value)' formControlName="tipo">
+                        <option>
+                            Selecciona ... 
+                            </option>
+                            <option *ngFor="let UserType of UserType" value="{{UserType}}">  
+                                {{UserType}}
+                            </option> 
+                        </select>
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                            Elige el tipo.
+                        </div>
+                </div><br>
+                <div class="form-group">
+                    <label >Teléfono</label>
+                    <input type="Number" formControlName="numeroTelefonico" placeholder="Ingresa el Número" class="form-control" min="0.0">
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
+                        El Número es requerido
+                    </div>
+                </div><br>
+                <button type="submit" class="btn btn-primary btn-block">Agregar Usuario</button><br>
+                <a href="/usuarios-list" text-align="center" > Volver </a>  
+            </form>
+        </div>
+    </div>
+</div> 

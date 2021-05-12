@@ -1,0 +1,39 @@
+<h1 align="center">Lista de Empleados</h1><br>
+<div align="center">
+    <button routerLink='/create-empleado' type="button" class="btn btn-success" >Agregar Empleado</button>
+</div><br>
+<div class="container">
+    <p *ngIf="Empleado.length <= 0" class="no-data text-center">Aún no se han agregado productos!</p>
+    <table class="table table-bordered" witdh="100%" *ngIf="Empleado.length > 0">
+        <thead class="table-success">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Departamento</th>
+                <th scope="col">RFC</th>
+                <th scope="col center">Actualizar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of Empleado; let i = index">
+                <td>{{emp._id}}</td>
+                <td>{{emp.firstName}}</td>
+                <td>{{emp.lastName}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.dep}}</td>
+                <td>{{emp.rfc}}</td>
+                <td class="text-center edit-block">
+                    <span class="edit m-2 " [routerLink]="['/edit-empleado/', emp._id]">
+                        <button type="button" class="btn btn-success btn-sm ">Editar</button>
+                    </span>
+                    <span class="delete" (click)="removeEmpleado(emp, i)">
+                        <button type="button" class="btn btn-danger btn-sm">Borrar</button>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
