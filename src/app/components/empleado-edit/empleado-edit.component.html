@@ -36,7 +36,7 @@
                     </div><br>
                     <div class="form-group">
                         <label>RFC</label>
-                        <input class="form-control" type="text" formControlName="rfc">
+                        <input class="form-control" maxlength="13" type="text" formControlName="rfc">
                         <div class="invalid-feedback" *ngIf="submitted && myForm.rfc.errors?.required">
                             RFC es requerido
                         </div>

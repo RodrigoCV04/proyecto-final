@@ -34,7 +34,7 @@
                 </div><br>
                 <div class="form-group">
                     <label >RFC</label>
-                    <input type="text" formControlName="rfc" placeholder="Ingresa el RFC" class="form-control" min="0.0">
+                    <input type="text" maxlength="13" formControlName="rfc" placeholder="Ingresa el RFC" class="form-control" min="0.0">
                     <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required" >
                         El RFC es requerido
                     </div>

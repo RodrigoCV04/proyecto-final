@@ -17,9 +17,11 @@ import { EmpleadoCreateComponent } from './components/empleado-create/empleado-c
 import { EmpleadoEditComponent } from './components/empleado-edit/empleado-edit.component';
 import { EmpleadoListComponent } from './components/empleado-list/empleado-list.component';
 
+import  {InicioComponent} from './components/inicio/inicio.component'
+
 const routes: Routes = [
 
-{path: '' , pathMatch: 'full', redirectTo : 'create-usuario'}, 
+{path: '' , pathMatch: 'full', redirectTo : 'inicio'}, 
 {path:  'create-usuario', component: UsuarioCreateComponent}, 
 {path: 'edit-usuario/:id', component: UsuarioEditComponent}, 
 {path: 'usuarios-list', component: UsuarioListComponent},
@@ -31,7 +33,8 @@ const routes: Routes = [
 {path: 'servicio-list', component: ServicioListComponent},
 {path: 'create-empleado', component: EmpleadoCreateComponent},
 {path: 'edit-empleado/:id', component:EmpleadoEditComponent},
-{path: 'empleado-list', component: EmpleadoListComponent }
+{path: 'empleado-list', component: EmpleadoListComponent },
+{path: 'inicio', component: InicioComponent}
 ];
 
 
