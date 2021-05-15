@@ -44,8 +44,8 @@ export class ServicioEditComponent implements OnInit {
         num : data.num,
         nameServ : data.nameServ,
         descServ : data.descServ,
-        precioProduct : data.precioProduct,
-        cantProduct : data.cantProduct
+        unidServ : data.unidServ,
+        precioServ : data.precioServ
       });
     });
   }
